@@ -1,9 +1,11 @@
 var builder = WebApplication.CreateBuilder(args);
 
 //aktiverar MVC
-builder.Services.AddControllersWithViews(); 
+builder.Services.AddControllersWithViews();
+
 
 var app = builder.Build();
+
 
 //wwwroot
 app.UseStaticFiles();
