@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/style/main.css">
-    <title>  @ViewData["title"]</title>
-    
+    <title> @ViewData["title"] - Moment 2</title>
+
 </head>
+
 <body>
-    <header>This is header</header>
 
-    @RenderBody()
+<div class="main-container">
+    
+            
+            <header>
+                <div class="header-wrapper">
+        
+                    <div class="navbar">
+                        <a href="/">Hem</a>
+                        <a href="/convert">Konvertering</a>
+                        <a href="/json">JSON</a>
+                    </div>
+                </div>
+            </header>
+         <main>
+            @RenderBody()
+        </main>
+            <footer>
+                <h1>Footer</h1>
+            </footer>
+</div>
 
-    <footer>
-        This is footer
-    </footer>
 
-<script src="/_framework/aspnetcore-browser-refresh.js"></script>
+    <script src="/_framework/aspnetcore-browser-refresh.js"></script>
 </body>
-</html>
 
+</html>
