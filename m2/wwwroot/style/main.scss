@@ -1,54 +1,95 @@
-@use 'reset';
+@use "reset";
 
+body {
+  font-family: "Poppins", sans-serif;
+  h1 {
+    font-size: 1.6rem;
+  }
+  background-color: #343541;
+  color: white;
+}
 
 .main-container {
-    min-height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 1.5rem;
+
+  .navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+    border-radius: 1rem;
+    display: flex;
+
+    a {
+      float: left;
+      padding: 1rem 0;
+
+      color: white;
+      text-decoration: none;
+      width: 33.33%;
+      text-align: center;
+      &:hover {
+        // color: black;
+        background-color: black;
+      }
+    }
+  }
+
+  /* Navigation links */
+}
+
+main {
+  width: 96%;
+  max-width: 1080px;
+  margin: 1rem auto;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+//Profil page
+.profile-page {
+  form {
     display: flex;
     flex-direction: column;
-  }
-  
-  header {
-    background-color: #333;
-    color: white;
-    padding: 1.5rem;
-
-    .navbar {
-        width: 100%;
-        background-color: #555;
-        overflow: auto;
-        border-radius: 1rem;
-      
-        a {
-          float: left;
-          padding: 1rem 0;
-      
-          color: white;
-          text-decoration: none;
-          width: 33.33%;
-          text-align: center;
-          &:hover {
-            // color: black;
-            background-color: black;
-          }
-        }
+    label,
+    input {
+      padding: 0.5rem 0;
+      margin: 0.2rem 0;
+    }
+    button {
+      width: 20%;
+      align-self: center;
+      margin: 1rem;
+      padding: 0.5rem 0;
+      font-size: 1.5rem;
+      border-radius: 1rem;
+      &:hover {
+        cursor: pointer;
       }
-      
-      /* Navigation links */
-      
-    
+    }
   }
-  
-  main {
-    width: 96%;
-    max-width: 1080px;
-    margin: 1rem auto;
+
+  .user-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 1rem;
+    h2 {
+      border-bottom: 1px solid #942050;
+      padding-bottom: 1rem;
+    }
   }
-  
-  footer {
-    background-color: #333;
-    color: white;
-    padding: 1.5rem;
-    text-align: center;
-    margin-top: auto;
-  }
-  
+}

@@ -52,6 +52,15 @@ table {
   border-spacing: 0;
 }
 
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #343541;
+  color: white;
+}
+body h1 {
+  font-size: 1.6rem;
+}
+
 .main-container {
   min-height: 100vh;
   display: flex;
@@ -69,6 +78,7 @@ header .navbar {
   background-color: #555;
   overflow: auto;
   border-radius: 1rem;
+  display: flex;
 }
 header .navbar a {
   float: left;
@@ -94,4 +104,35 @@ footer {
   padding: 1.5rem;
   text-align: center;
   margin-top: auto;
+}
+
+.profile-page form {
+  display: flex;
+  flex-direction: column;
+}
+.profile-page form label,
+.profile-page form input {
+  padding: 0.5rem 0;
+  margin: 0.2rem 0;
+}
+.profile-page form button {
+  width: 20%;
+  align-self: center;
+  margin: 1rem;
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+}
+.profile-page form button:hover {
+  cursor: pointer;
+}
+.profile-page .user-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+.profile-page .user-info-wrapper h2 {
+  border-bottom: 1px solid #942050;
+  padding-bottom: 1rem;
 }/*# sourceMappingURL=main.css.map */

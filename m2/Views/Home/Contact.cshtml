@@ -2,4 +2,15 @@
        ViewData["title"] = "Contact";
 }
 
-<h1>Contact us</h1>
+<h1>Contact us
+
+
+        @if (ViewBag.UserNameFromSession != null)
+       {
+
+              @ViewBag.UserNameFromSession
+       } 
+       else {
+               <span>empty</span>
+       }
+</h1>

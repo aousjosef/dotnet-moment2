@@ -1,8 +1,65 @@
-﻿@{
+﻿@model m2.Models.ProfileModel
+@using Microsoft.AspNetCore.Http
+
+
+
+@{
     ViewData["title"] = "Profile";
 }
+<div class="profile-page">
+    <h1>User profile</h1>
+
+    <br>
+    <form method="post">
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <label asp-for="Name"></label>
+        <input asp-for="Name">
+        <span style="color:red" asp-validation-for="Name"></span>
+
+        <br>
+
+        <label asp-for="Age"></label>
+        <input asp-for="Age">
+        <span style="color:red" asp-validation-for="Age"></span>
+        <br>
+
+        <label asp-for="Work"></label>
+        <input asp-for="Work">
+        <span style="color:red" asp-validation-for="Work"></span>
+
+        <br>
+        <label asp-for="City"></label>
+        <input asp-for="City">
+        <span style="color:red" asp-validation-for="City"></span>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
 
 
-<h1>Profil page</h1>
+    @if (Model != null)
+    {
+        <div class="user-info-wrapper">
+            <h2>Name: @Model.Name </h2>
+
+            <h2>Age: @Model.Age</h2>
+
+            <h2>Work: @Model.Work </h2>
+
+            <h2>City: @Model.City </h2>
+
+        </div>
+          
+
+    }
+
+    else
+    {
+        <h1>No data has been received from the form</h1>
+    }
 
 
+
+
+
+</div>
