@@ -6,13 +6,15 @@ namespace m2.Controllers;
 public class HomeController : Controller
 {
 
+
+
     public IActionResult Index()
     {
         return View();
     }
 
 
-    // Tar emot get
+    // GET
     [Route("/profile")]
 
     public IActionResult Profile()
@@ -21,7 +23,9 @@ public class HomeController : Controller
         return View();
     }
 
-    //Tar emot post, skickar model data om 
+
+
+    //POST, tar emot data från view 
     [HttpPost]
     [Route("/profile")]
 
@@ -31,45 +35,62 @@ public class HomeController : Controller
         if (ModelState.IsValid)
         {
 
-            HttpContext.Session.SetString("username", user.Name);
+            var sessionData = HttpContext.Session.GetString("userprofile");
+
+            var listoFUsers = new List<ProfileModel>();
+
+            if (sessionData != null)
+            {
+                listoFUsers = System.Text.Json.JsonSerializer.Deserialize<List<ProfileModel>>(sessionData);
+            }
+
+
+            listoFUsers.Add(user);
+            string jsonList = System.Text.Json.JsonSerializer.Serialize(listoFUsers);
+            HttpContext.Session.SetString("userprofile", jsonList);
 
 
             return View(user);
 
         }
 
-
         return View();
-
-
 
     }
 
 
-
-
-    [Route("/contact")]
-    public IActionResult Contact()
+    [Route("/users")]
+    public IActionResult Users()
     {
-        var sessionData = HttpContext.Session.GetString("username");
-      
-  if (sessionData != null)
+        var sessionData = HttpContext.Session.GetString("userprofile");
+
+        if (sessionData != null)
         {
-            ViewBag.UserNameFromSession = sessionData;
+            var listoFUsers = System.Text.Json.JsonSerializer.Deserialize<List<ProfileModel>>(sessionData);
+
+            ViewBag.ProfileListSession = listoFUsers;
         }
+
+
 
         return View();
     }
 
 
     [Route("/about")]
+
     public IActionResult About()
     {
+
+        DateTime today = DateTime.Today;
+        string date = today.ToString("d");
+        ViewData["date"] = date;
 
         return View();
 
     }
 
-
 }
+
+
 

@@ -5,9 +5,14 @@
 
 @{
     ViewData["title"] = "Profile";
+
 }
+
+
 <div class="profile-page">
-    <h1>User profile</h1>
+        <h1>User profile</h1>
+        
+      
 
     <br>
     <form method="post">
@@ -42,9 +47,9 @@
         <div class="user-info-wrapper">
             <h2>Name: @Model.Name </h2>
 
-            <h2>Age: @Model.Age</h2>
+            <h2>Age: @Model.Age  </h2>
 
-            <h2>Work: @Model.Work </h2>
+            <h2>Work:@Model.Work </h2>
 
             <h2>City: @Model.City </h2>
 
@@ -57,9 +62,6 @@
     {
         <h1>No data has been received from the form</h1>
     }
-
-
-
 
 
 </div>

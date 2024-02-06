@@ -11,27 +11,27 @@
 
 <body>
 
-<div class="main-container">
-    
-            
-            <header>
-                <div class="header-wrapper">
-        
-                    <div class="navbar">
-                        <a asp-controller="Home" asp-action="Index">Home</a>
-                        <a asp-controller="Home" asp-action="Profile">Profile</a>
-                        <a asp-controller="Home" asp-action="Contact">Contact</a>
-                        <a asp-controller="Home" asp-action="About">About</a>
-                    </div>
+    <div class="main-container">
+
+
+        <header>
+            <div class="header-wrapper">
+
+                <div class="navbar">
+                    <a asp-controller="Home" asp-action="Index">Home</a>
+                    <a asp-controller="Home" asp-action="Profile">Profile</a>
+                    <a asp-controller="Home" asp-action="Users">Users</a>
+                    <a asp-controller="Home" asp-action="About">About</a>
                 </div>
-            </header>
-         <main>
+            </div>
+        </header>
+        <main>
             @RenderBody()
         </main>
-            <footer>
-                <h1>Footer</h1>
-            </footer>
-</div>
+        <footer>
+            <h1>Footer</h1>
+        </footer>
+    </div>
 
 
     <script src="/_framework/aspnetcore-browser-refresh.js"></script>
