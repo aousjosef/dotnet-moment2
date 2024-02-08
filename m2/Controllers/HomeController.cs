@@ -7,7 +7,7 @@ public class HomeController : Controller
 {
 
 
-
+//Skickar data för att visa den i min partial view
     public IActionResult Index()
     {
 
@@ -65,6 +65,7 @@ public class HomeController : Controller
 
     }
 
+    //hämtar data från session för att sedan skicka den med viewbag. Skickar även data till min partial för att hämta datum
 
     [Route("/users")]
     public IActionResult Users()
@@ -80,13 +81,13 @@ public class HomeController : Controller
 
 
         ViewData["date"] = getDate();
-        
+
         return View();
     }
 
 
 
-
+//Function för att generera dagens datum
     string getDate()
     {
 
