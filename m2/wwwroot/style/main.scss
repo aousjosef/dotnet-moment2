@@ -59,13 +59,42 @@ footer {
   margin-top: auto;
 }
 
+//Home page
+.home-page-wrapper {
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+
+  h1 {
+    text-align: center;
+    margin: 1rem 0;
+    font-weight: bold;
+  }
+
+  .text-wrapper{
+    display: flex;
+    // border: 1px solid blueviolet;
+    justify-content: center;
+    p {
+      width: 60%;
+      text-align: justify;
+      padding: 4rem 0;
+    }
+  }
+ 
+}
+
 //Profil page
 .profile-page {
   form {
     display: flex;
     flex-direction: column;
     label,
-    input {
+    input,select {
       padding: 0.5rem 0;
       margin: 0.2rem 0;
     }
@@ -96,28 +125,26 @@ footer {
 
 //users page
 
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 1.7rem;
+}
 
-  td,
-  th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
 
-  tr:nth-child(even) {
-    background-color: black;
-  }
-
-
+tr:nth-child(even) {
+  background-color: black;
+}
 
 //Partial view
-.partial-view{
-
+.partial-view {
   background-color: black;
   color: white;
   padding: 1rem 0;
@@ -125,7 +152,7 @@ footer {
   margin: 1rem 0;
   line-height: 2rem;
   text-align: center;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 }

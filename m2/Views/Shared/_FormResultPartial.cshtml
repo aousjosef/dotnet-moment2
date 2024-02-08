@@ -1,0 +1,28 @@
+ @{
+    
+ }
+ 
+  <div class="user-info-wrapper">
+            @* Datan nedan hämtas från model som har skikckats med vyn *@
+            <h2>Name: @Model.Name </h2>
+
+            <h2>Age: @Model.Age </h2>
+
+            <h2>Work:@Model.Work </h2>
+
+            <h2>City: @Model.City </h2>
+
+            @* Datan nedan hämtas direkt ViewBag *@
+            <h2>Gender: @ViewBag.gender </h2>
+
+            <h2>Education: @ViewBag.education </h2>
+
+            @* en loop för att presentra data som finns i array *@
+
+            <h2>
+                Goals: @foreach (string goal in ViewBag.goalsArray)
+                {
+                    <span>@goal</span>
+                }
+            </h2>
+        </div>

@@ -5,62 +5,52 @@
 }
 
 <div class="users-page">
-       <h1>Users from session
-              <br>
-              <br>
-         
-              
-       
-              
+
+       @* En partial för att hämta dagens datum *@
+          <partial name="_TodayDatePartial"></partial>
+
+       <h1>Data fetched from session</h1>
+       <br>
        <table>
-         <tr>
-           <th>Index</th>
-           <th>Name</th>
-           <th>Age</th>
-           <th>Work</th>
-           <th>City</th>
-       
-       
-           
-         </tr>
-       
-          
-       
-          @{
-       
-        if (ViewBag.ProfileListSession != null)
-                                   {
-                                          int index = 1;
-                                          foreach (var user in users)
-                                          {
-                                                   <tr>
-       
-                                                 <td>@index</td>
-                                                 <td>@user.Name</td>
-                                                 <td>@user.Age</td>
-                                                 <td>@user.Work</td>
-                                                 <td>@user.City</td>
-                                                 
-                                                 </tr>
-                                                 index++;
-       
-                                          }
-                                   }
-                           
-       
-                            else
+              <tr>
+                     <th>Index</th>
+                     <th>Name</th>
+                     <th>Age</th>
+                     <th>Work</th>
+                     <th>City</th>
+              </tr>
+
+@* Data som här hämtad från session och skickad med ViewBag *@
+
+              @{
+                     if (ViewBag.ProfileListSession != null)
+                     {
+                            int index = 1;
+                            foreach (var user in users)
                             {
-                            <span>session is empty</span>
+                                   <tr>
+
+                                          <td>@index</td>
+                                          <td>@user.Name</td>
+                                          <td>@user.Age</td>
+                                          <td>@user.Work</td>
+                                          <td>@user.City</td>
+
+                                   </tr>
+                                   index++;
+
                             }
-       
-          }
-        
+                     }
+
+
+                     else
+                     {
+                            <span>session is empty</span>
+                     }
+
+              }
+
        </table>
-       
-       
-       
-       
-       
-       
-       </h1>
+
+
 </div>

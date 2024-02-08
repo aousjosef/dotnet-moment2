@@ -10,10 +10,9 @@
 <div class="profile-page">
     <h1>User profile</h1>
 
-
-
     <br>
     <form method="post">
+        @* aktiverar felmeddelande *@
         <div asp-validation-summary="ModelOnly"></div>
 
         <label asp-for="Name"></label>
@@ -39,13 +38,13 @@
 
         <div>
             <label>Gender:</label>
-            <input type="radio" name="gender" value="Male" /> Male
-            <input type="radio" name="gender" value="Female" /> Female
+            <input type="radio" name="gender" value="Male" required /> Male
+            <input type="radio" name="gender" value="Female" required /> Female
 
         </div>
         <br>
         <label>Education Level:</label>
-        <select name="education">
+        <select name="education" required>
             <option value="High School">High School</option>
             <option value="Diploma">Diploma</option>
             <option value="Bachelor">Bachelor</option>
@@ -71,37 +70,12 @@
 
     @if (Model != null)
     {
-        <div class="user-info-wrapper">
-            <h2>Name: @Model.Name </h2>
-
-            <h2>Age: @Model.Age </h2>
-
-            <h2>Work:@Model.Work </h2>
-
-            <h2>City: @Model.City </h2>
-
-            <h2>Gender: @ViewBag.gender </h2>
-
-            <h2>Education: @ViewBag.education </h2>
-
-            <h2>
-                Goals: @foreach (string goal in ViewBag.goalsArray)
-                {
-                    <span>@goal</span>
-                }
-            </h2>
-
-
-
-        </div>
-
-
+       <partial name="_FormResultPartial"/>
     }
 
     else
     {
         <h1>No data has been received from the form</h1>
     }
-
 
 </div>

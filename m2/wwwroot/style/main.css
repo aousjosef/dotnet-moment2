@@ -100,12 +100,35 @@ footer {
   margin-top: auto;
 }
 
+.home-page-wrapper {
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+}
+.home-page-wrapper h1 {
+  text-align: center;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+.home-page-wrapper .text-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.home-page-wrapper .text-wrapper p {
+  width: 60%;
+  text-align: justify;
+  padding: 4rem 0;
+}
+
 .profile-page form {
   display: flex;
   flex-direction: column;
 }
 .profile-page form label,
-.profile-page form input {
+.profile-page form input, .profile-page form select {
   padding: 0.5rem 0;
   margin: 0.2rem 0;
 }
@@ -135,6 +158,7 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  font-size: 1.7rem;
 }
 
 td,

@@ -78,20 +78,13 @@ public class HomeController : Controller
             ViewBag.ProfileListSession = listoFUsers;
         }
 
-        return View();
-    }
-
-
-    [Route("/about")]
-
-    public IActionResult About()
-    {
 
         ViewData["date"] = getDate();
-
+        
         return View();
-
     }
+
+
 
 
     string getDate()
