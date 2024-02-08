@@ -1,6 +1,4 @@
 ﻿@model m2.Models.ProfileModel
-@using Microsoft.AspNetCore.Http
-
 
 
 @{
@@ -10,9 +8,9 @@
 
 
 <div class="profile-page">
-        <h1>User profile</h1>
-        
-      
+    <h1>User profile</h1>
+
+
 
     <br>
     <form method="post">
@@ -38,6 +36,35 @@
         <input asp-for="City">
         <span style="color:red" asp-validation-for="City"></span>
         <br>
+
+        <div>
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="Male" /> Male
+            <input type="radio" name="gender" value="Female" /> Female
+
+        </div>
+        <br>
+        <label>Education Level:</label>
+        <select name="education">
+            <option value="High School">High School</option>
+            <option value="Diploma">Diploma</option>
+            <option value="Bachelor">Bachelor</option>
+            <option value="Masters or Higher">Masters or Higher</option>
+        </select>
+        <br>
+        <br>
+
+        <div>
+            <label>Goals in the next 5 years</label><br>
+            <input type="checkbox" name="goalsArray" value="Studying"> Learning<br>
+            <input type="checkbox" name="goalsArray" value="Working"> Working<br>
+            <input type="checkbox" name="goalsArray" value="Cooking"> Travelling<br>
+        </div>
+
+        <!-- Add more checkboxes for other categories as needed -->
+
+
+
         <button type="submit">Submit</button>
     </form>
 
@@ -47,14 +74,27 @@
         <div class="user-info-wrapper">
             <h2>Name: @Model.Name </h2>
 
-            <h2>Age: @Model.Age  </h2>
+            <h2>Age: @Model.Age </h2>
 
             <h2>Work:@Model.Work </h2>
 
             <h2>City: @Model.City </h2>
 
+            <h2>Gender: @ViewBag.gender </h2>
+
+            <h2>Education: @ViewBag.education </h2>
+
+            <h2>
+                Goals: @foreach (string goal in ViewBag.goalsArray)
+                {
+                    <span>@goal</span>
+                }
+            </h2>
+
+
+
         </div>
-          
+
 
     }
 

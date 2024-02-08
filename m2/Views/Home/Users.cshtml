@@ -4,61 +4,63 @@
 
 }
 
-<h1>Users from session
-       <br>
-       <br>
-  
-        @* <h1>Todays date is @ViewData["date"]</h1> *@
-
+<div class="users-page">
+       <h1>Users from session
+              <br>
+              <br>
+         
+              
        
-<table>
-  <tr>
-    <th>Index</th>
-    <th>Name</th>
-    <th>Age</th>
-    <th>Work</th>
-    <th>City</th>
-
-
-    
-  </tr>
-
-   
-
-   @{
-
- if (ViewBag.ProfileListSession != null)
-                            {
-                                   int index = 1;
-                                   foreach (var user in users)
+              
+       <table>
+         <tr>
+           <th>Index</th>
+           <th>Name</th>
+           <th>Age</th>
+           <th>Work</th>
+           <th>City</th>
+       
+       
+           
+         </tr>
+       
+          
+       
+          @{
+       
+        if (ViewBag.ProfileListSession != null)
                                    {
-                                            <tr>
-
-                                          <td>@index</td>
-                                          <td>@user.Name</td>
-                                          <td>@user.Age</td>
-                                          <td>@user.Work</td>
-                                          <td>@user.City</td>
-                                          
-                                          </tr>
-                                          index++;
-
+                                          int index = 1;
+                                          foreach (var user in users)
+                                          {
+                                                   <tr>
+       
+                                                 <td>@index</td>
+                                                 <td>@user.Name</td>
+                                                 <td>@user.Age</td>
+                                                 <td>@user.Work</td>
+                                                 <td>@user.City</td>
+                                                 
+                                                 </tr>
+                                                 index++;
+       
+                                          }
                                    }
+                           
+       
+                            else
+                            {
+                            <span>session is empty</span>
                             }
-                    
-
-                     else
-                     {
-                     <span>session is empty</span>
-                     }
-
-   }
- 
-</table>
-
-
-
-
-
-
-</h1>
+       
+          }
+        
+       </table>
+       
+       
+       
+       
+       
+       
+       </h1>
+</div>

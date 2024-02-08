@@ -137,7 +137,8 @@ table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -145,4 +146,17 @@ td, th {
 
 tr:nth-child(even) {
   background-color: black;
+}
+
+.partial-view {
+  background-color: black;
+  color: white;
+  padding: 1rem 0;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  line-height: 2rem;
+  text-align: center;
+}
+.partial-view:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

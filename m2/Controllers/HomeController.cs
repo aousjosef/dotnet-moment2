@@ -10,11 +10,14 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+
+        ViewData["date"] = getDate();
         return View();
     }
 
 
     // GET
+    [HttpGet]
     [Route("/profile")]
 
     public IActionResult Profile()
@@ -29,7 +32,7 @@ public class HomeController : Controller
     [HttpPost]
     [Route("/profile")]
 
-    public IActionResult Profile(ProfileModel user)
+    public IActionResult Profile(ProfileModel user, string gender, string education, string[] goalsArray)
     {
 
         if (ModelState.IsValid)
@@ -49,8 +52,12 @@ public class HomeController : Controller
             string jsonList = System.Text.Json.JsonSerializer.Serialize(listoFUsers);
             HttpContext.Session.SetString("userprofile", jsonList);
 
+            ViewBag.gender = gender;
+            ViewBag.education = education;
+            ViewBag.goalsArray = goalsArray;
 
             return View(user);
+
 
         }
 
@@ -71,8 +78,6 @@ public class HomeController : Controller
             ViewBag.ProfileListSession = listoFUsers;
         }
 
-
-
         return View();
     }
 
@@ -82,11 +87,19 @@ public class HomeController : Controller
     public IActionResult About()
     {
 
-        DateTime today = DateTime.Today;
-        string date = today.ToString("d");
-        ViewData["date"] = date;
+        ViewData["date"] = getDate();
 
         return View();
+
+    }
+
+
+    string getDate()
+    {
+
+        DateTime today = DateTime.Today;
+        string date = today.ToString("d");
+        return date;
 
     }
 
